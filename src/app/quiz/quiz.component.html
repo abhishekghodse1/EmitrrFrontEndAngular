@@ -1,0 +1,82 @@
+<!-- quizz.component.html
+<form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+<div class="container">
+    <h1 class="text-primary mb-4">Quizz Portal</h1>
+
+    <div *ngFor="let quiz of quiz" class="card mb-3">
+      <div class="card-header">
+        <strong>{{ quiz.qid }}. {{ quiz.question }}</strong>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <input type="radio" name="q{{ quiz.qid }}"   id="option1{{ quiz.qid }}" value="{{ quiz.option1 }}" class="main" >
+            <label for="option1{{ quiz.qid }}">{{ quiz.option1 }}</label>
+          </li>
+          <li class="list-group-item">
+            <input type="radio" name="q{{ quiz.qid }}" id="option2{{ quiz.qid }}" value="{{ quiz.option2 }}" class="main">
+            <label for="option2{{ quiz.qid }}">{{ quiz.option2 }}</label>
+          </li>
+          <li class="list-group-item">
+            <input type="radio" name="q{{ quiz.qid }}" id="option3{{ quiz.qid }}" value="{{ quiz.option3 }}" class="main">
+            <label for="option3{{ quiz.qid }}">{{ quiz.option3 }}</label>
+          </li>
+          <li class="list-group-item">
+            <input type="radio" name="q{{ quiz.qid }}" id="option4{{ quiz.qid }}" value="{{ quiz.option4 }}" class="main">
+            <label for="option4{{ quiz.qid }}">{{ quiz.option4 }}</label>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer text-muted">
+        <strong>Answer:</strong> {{ quiz.answer }}
+        <br>
+        <strong>Difficulty Level:</strong> {{ quiz.difficultyLevel }}
+        <br>
+        <strong>Question Marks:</strong> {{ quiz.question_marks }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Quiz</button>
+  </div>
+</form> -->
+  
+
+   <!-- quizz.component.html -->
+<form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1 class="text-primary mb-4">Quizz Portal</h1>
+
+    <div *ngFor="let quiz of quiz" class="card mb-3">
+      <div class="card-header">
+        <strong>{{ quiz.qid }}. {{ quiz.question }}</strong>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <input type="radio" [formControlName]="'q' + quiz.qid" id="option1{{ quiz.qid }}" value="1" class="main">
+            <label for="option1{{ quiz.qid }}">{{ quiz.option1 }}</label>
+          </li>
+          <li class="list-group-item">
+            <input type="radio" [formControlName]="'q' + quiz.qid" id="option2{{ quiz.qid }}" value="2" class="main">
+            <label for="option2{{ quiz.qid }}">{{ quiz.option2 }}</label>
+          </li>
+          <li class="list-group-item">
+            <input type="radio" [formControlName]="'q' + quiz.qid" id="option3{{ quiz.qid }}" value="3" class="main">
+            <label for="option3{{ quiz.qid }}">{{ quiz.option3 }}</label>
+          </li>
+          <li class="list-group-item">
+            <input type="radio" [formControlName]="'q' + quiz.qid" id="option4{{ quiz.qid }}" value="4" class="main">
+            <label for="option4{{ quiz.qid }}">{{ quiz.option4 }}</label>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer text-muted">
+        <strong>Answer:</strong> {{ quiz.answer }}
+        <br>
+        <strong>Difficulty Level:</strong> {{ quiz.difficultyLevel }}
+        <br>
+        <strong>Question Marks:</strong> {{ quiz.questionMarks }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"  >Submit Quiz</button>
+  </div>
+</form>

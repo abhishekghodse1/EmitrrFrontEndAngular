@@ -1,0 +1,44 @@
+<!-- <div class="container mt-5">
+<div class="login-container">
+    <h1 class="heading">LogIn</h1>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <lable>Email</lable>
+            <input type="email" formControlName="email">
+        </div>
+        <div class="form-group">
+            <lable>Password</lable>
+            <input type="password" formControlName="password">
+        </div>
+        <div class="errormsg">{{errorMessage}}</div>
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="myForm.invalid">Login</button>
+    </form>
+    <div class="addUser" (click)="navigateTosignup()">NewUser?</div>
+
+</div>
+</div> -->
+
+<div class="container mt-5">
+    <div class="login-container p-4 border rounded">
+        <h1 class="heading text-center">LogIn</h1>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+            </div>
+            <div class="errormsg">{{errorMessage}}</div>
+            <button type="submit" class="btn btn-primary mt-3" [disabled]="myForm.invalid">Login</button>
+        </form>
+        <div class="addUser text-primary" (click)="navigateTosignup()">New User?</div>
+    </div>
+    
+</div>
+
+
+
+
+

@@ -1,0 +1,47 @@
+
+
+<div class="container mt-5">
+    <div class="login-container p-4 border rounded " >
+        <h1 class="heading text-center">Registration Form</h1>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name<span class="required">*</span></label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                <div *ngIf="f.firstName.invalid && (f.firstName.dirty || f.firstName.touched)"
+             class="error-msg">First Name is required</div>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name<span class="required">*</span></label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                <div *ngIf="f.lastName.invalid && (f.lastName.dirty || f.lastName.touched)"
+             class="error-msg">Last Name is required</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email<span class="required">*</span></label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+                <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+             class="error-msg">Email is required</div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password<span class="required">*</span></label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+                <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+             class="error-msg">Password is required</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password<span class="required">*</span></label>
+                <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+                <div *ngIf="f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched)"
+                class="error-msg">Confirm Password is required</div>
+                <div *ngIf="f.confirmPassword.touched && f.password.value.trim() !== f.confirmPassword.value.trim()"
+                    class="errorMsg">Password Not Match</div>
+            </div>
+
+            <button type="submit" class="btn btn-success"  [disabled]="signupForm.invalid">Signup</button>
+        </form>
+    </div>
+</div>
